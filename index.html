@@ -8,97 +8,115 @@
 </head>
 <body>
 
-  <header>
-    <h1>Bonjour, je suis Dany Boulanger</h1>
-    <p></p>
-    <nav>
+  <header role="banner">
+    <h1>Bonjour, je suis Dany</h1>
+    <p>Game Programming</p>
+    <nav role="navigation" aria-label="Navigation principale">
       <a href="#about">À propos</a>
       <a href="#projects">Projets</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section id="about">
-    <h2>À propos de moi</h2>
-    <p>
-      Je suis passionné par la création de jeux vidéos.
-      J'aime travailler sur des projets créatifs et résoudre des problèmes techniques.
-    </p>
-  
-    <h3>Centres d'intérêt</h3>
-    <ul class="interests">
-      <li>Jeux vidéos</li>
-      <li>Musique</li>
-    </ul>
-  </section>
+  <main id="main-content">
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">À propos de moi</h2>
+      <p>
+        Je suis passionné par la création de jeux vidéos.
+        J'aime travailler sur des projets créatifs et résoudre des problèmes techniques.
+      </p>
 
-  <section id="projects">
-    <h2>Mes Projets</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>Talesrun</h3>
-        <p>Plateformer 2D</p>
-        <a href="#" target="_blank">Voir le projet</a>
-      </div>
-      <div class="project">
-        <h3>Dorov</h3>
-        <p>Jeux d'Horreur 3D</p>
-        <a href="#" target="_blank">Voir le projet</a>
-      </div>
-    </div>
-  </section>
+      <h3>Centres d'intérêt</h3>
+      <ul class="interests">
+        <li>Musique et création sonore</li>
+        <li>Jeux vidéo</li>
+        <li>Lecture & développement personnel</li>
+      </ul>
+    </section>
 
-  <section id="contact">
-      <h2>Prendre Contact :</h2>
-    
-      <form action="#" method="post">
-        <p>Civilité :</p>
-        <label><input type="radio" name="civilite" value="madame"> Madame</label>
-        <label><input type="radio" name="civilite" value="monsieur"> Monsieur</label><br><br>
-    
-        <label>Prénom : <input type="text" name="prenom" required></label><br><br>
-        <label>Nom : <input type="text" name="nom" required></label><br><br>
-        <label>Adresse e-mail : <input type="email" name="email" required></label><br><br>
-        <label>Code postal : <input type="text" name="code_postal"></label><br><br>
-        <label>Ville : <input type="text" name="ville"></label><br><br>
-        <label>Âge : <input type="number" name="age" min="0"></label><br><br>
-        <label>Date de naissance : <input type="date" name="date_naissance"></label><br><br>
-    
-        <label>Profession :
-          <select name="profession">
-            <option value="">-- Choisissez votre profession --</option>
-            <option value="etudiant">Étudiant</option>
-            <option value="developpeur">Développeur</option>
-            <option value="designer">Designer</option>
-            <option value="autre">Autre</option>
-          </select>
-        </label><br><br>
-    
-        <label>Pays :
-          <select name="pays">
-            <option value="">-- Choisissez votre pays --</option>
-            <option value="france">France</option>
-            <option value="belgique">Belgique</option>
-            <option value="canada">Canada</option>
-            <option value="autre">Autre</option>
-          </select>
-        </label><br><br>
-    
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Mes Projets</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>Tales Run</h3>
+          <p>Projet 2D Plateformer</p>
+          <a href="#" target="_blank" rel="noopener">Voir le projet</a>
+        </article>
+        <article class="project">
+          <h3>Dorov</h3>
+          <p>Projet 3D Horror</p>
+          <a href="#" target="_blank" rel="noopener">Voir le projet</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Formulaire d'inscription complet</h2>
+
+      <form action="#" method="post" aria-describedby="contact-instructions">
+        <p id="contact-instructions">Veuillez remplir tous les champs requis marqués d’un astérisque.</p>
+
         <fieldset>
-          <legend>Centres d'intérêt :</legend>
-          <p>Cochez les cases qui vous intéressent.</p>
-          <label><input type="checkbox" name="interets" value="art"> Art</label><br>
-          <label><input type="checkbox" name="interets" value="technologie"> Technologie</label><br>
+          <legend>Civilité <span aria-hidden="true">*</span></legend>
+          <label><input type="radio" name="civilite" value="madame" required> Madame</label>
+          <label><input type="radio" name="civilite" value="monsieur" required> Monsieur</label>
+        </fieldset>
+
+        <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
+        <input type="text" id="prenom" name="prenom" required>
+
+        <label for="nom">Nom <span aria-hidden="true">*</span></label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="email">Adresse e-mail <span aria-hidden="true">*</span></label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="code_postal">Code postal</label>
+        <input type="text" id="code_postal" name="code_postal">
+
+        <label for="ville">Ville</label>
+        <input type="text" id="ville" name="ville">
+
+        <label for="age">Âge</label>
+        <input type="number" id="age" name="age" min="0">
+
+        <label for="date_naissance">Date de naissance</label>
+        <input type="date" id="date_naissance" name="date_naissance">
+
+        <label for="profession">Profession</label>
+        <select id="profession" name="profession">
+          <option value="">-- Choisissez votre profession --</option>
+          <option value="etudiant">Étudiant</option>
+          <option value="developpeur">Développeur</option>
+          <option value="designer">Designer</option>
+          <option value="autre">Autre</option>
+        </select>
+
+        <label for="pays">Pays</label>
+        <select id="pays" name="pays">
+          <option value="">-- Choisissez votre pays --</option>
+          <option value="france">France</option>
+          <option value="belgique">Belgique</option>
+          <option value="canada">Canada</option>
+          <option value="autre">Autre</option>
+        </select>
+
+        <fieldset>
+          <legend>Centres d'intérêt</legend>
+          <p>Cochez les cases qui vous intéressent :</p>
+          <label><input type="checkbox" name="interets" value="art"> Art</label>
+          <label><input type="checkbox" name="interets" value="technologie"> Technologie</label>
           <label><input type="checkbox" name="interets" value="musique"> Musique</label>
-        </fieldset><br>
-    
-        <label><input type="checkbox" name="cgu" required> J'accepte les conditions générales</label><br><br>
-    
+        </fieldset>
+
+        <label><input type="checkbox" name="cgu" required> J'accepte les conditions générales <span aria-hidden="true">*</span></label>
+
         <button type="submit">S'inscrire</button>
       </form>
-  </section>
+    </section>
+  </main>
 
-  <footer>
+  <footer role="contentinfo">
   </footer>
 
 </body>
